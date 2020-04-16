@@ -41,11 +41,11 @@ It is a comparison of the diversity between samples. To mesure it, we use the Br
 3. **family barplot**
 
 ## Results 
-####The quality profile and error rate
+#### The quality profile and error rate
 seem ok 
-![](qualityprofileR1.jpeg) ![](qualityprofileR2.jpeg)
-![](errorrateR1.jpeg) 
-![](errorrateR2.jpeg) 
+![](ims/qualityprofileR1.jpeg) ![](qualityprofileR2.jpeg)
+![](ims/errorrateR1.jpeg) 
+![](ims/errorrateR2.jpeg) 
 
 #### chimeras
 60% of our merged sequences are chimeras (it is too much), is it beaucause of primers ?
@@ -85,8 +85,8 @@ An overview of the most represented taxa.
 [6,] "Rhodocyclaceae"      "Propionivibrio" </code></pre>
 
 #### alpha diversity
-![](alphadiversity.jpeg) 
-####familly plot 
+![](ims/alphadiversity.jpeg) 
+#### familly plot 
 It seems that there is a wide viariability between the composition of each samples.
 These results suggest that each samples don't come from the same community, but maybe were taken at different moments or places. 
-![](family.jpeg) 
+![](ims/family.jpeg) 
