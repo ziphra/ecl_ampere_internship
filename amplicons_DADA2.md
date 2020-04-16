@@ -4,7 +4,7 @@ A fastq file is build as follow :
  
 1. @ followed by the sequence id
 2. the complete sequence  
-3. +  
+3. \+  
 4. The quality score for each nucleotid 
 
 
