@@ -1,4 +1,8 @@
 # Using DADA2 to analyse fastq files
+See the article below for more information  
+Callahan, B.J., McMurdie, P.J., Rosen, M.J., Han, A.W., Johnson, A.J.A., Holmes, S.P., 2016. **DADA2: High-resolution sample inference from Illumina amplicon data.** Nat Methods 13, 581–583. <https://doi.org/10.1038/nmeth.3869>
+> **Abstract:** We present DADA2, a software package that models and corrects Illumina-sequenced amplicon errors. DADA2 infers sample sequences exactly, without coarse-graining into OTUs, and resolves differences of as little as one nucleotide. In several mock communities DADA2 identified more real variants and output fewer spurious sequences than other methods. We applied DADA2 to vaginal samples from a cohort of pregnant women, revealing a diversity of previously undetected *Lactobacillus crispatus* variants.
+
 ## fastq file
 A fastq file is build as follow : 
  
@@ -46,45 +50,52 @@ seem ok
 ![](ims/errorrateR2.jpeg) 
 
 ### chimeras
-60% of our merged sequences are chimeras (it is too much), is it beaucause of primers ?
+4% of our readings are chimeras : OK. 
+
 ### distribution of sequence lenght 
 seem ok with a V3V4 region lenght
-<pre><code> 298  420  424  439  440  441  442  443  444  450  459  460  461  464  465  466 
-  20    2    9    2  236   29  115  318    2    1   32  441   32   37  970 2845 
- 467 
-   1 </code></pre>
+<pre><code>248 370 374 389 390 391 392 393 394 400 409 410 411 414 415 416 417 
+  7   1   5   2  41   8  29  82   1   1   4  80   9  12 164 425   1 </code></pre>
    
 ### reading track
 seem coherent 
 <pre><code>            input filtered denoisedF denoisedR merged nonchim
-CHK-V3V4-1  22611    20736     22418     22247  22081    6850
-CHK-V3V4-10 27283    24798     26944     26867  26341    6391
-CHK-V3V4-11 27790    25546     27369     27269  26383    8665
-CHK-V3V4-12 27487    25309     26987     26767  25549    7726
-CHK-V3V4-2  27079    25005     26921     26728  26593   15951
-CHK-V3V4-3  33030    30500     32809     32545  32244   18034</code></pre>  
+CHK-V3V4-01 22611    20805     20780     20775  20753   20750
+CHK-V3V4-02 27079    25072     25053     25060  25039   24998
+CHK-V3V4-03 33030    30622     30577     30578  30464   30371
+CHK-V3V4-04 29744    23557     23544     23541  23529   23529
+CHK-V3V4-05 44204    40909     40674     40798  39093   37290
+CHK-V3V4-06 23186    21446     21326     21383  20824   20324</code></pre>  
 
 ### taxonomy assignment
 An overview of the most represented taxa.
 
-<pre><code>     Kingdom    Phylum           Class                 Order                  
-[1,] "Bacteria" "Proteobacteria" "Gammaproteobacteria" "Betaproteobacteriales"
-[2,] "Bacteria" "Proteobacteria" "Deltaproteobacteria" "Desulfuromonadales"   
-[3,] "Bacteria" "Proteobacteria" "Deltaproteobacteria" "Desulfuromonadales"   
-[4,] "Bacteria" "Proteobacteria" "Gammaproteobacteria" "Betaproteobacteriales"
-[5,] "Bacteria" "Proteobacteria" "Deltaproteobacteria" "Desulfovibrionales"   
-[6,] "Bacteria" "Proteobacteria" "Gammaproteobacteria" "Betaproteobacteriales"
-     Family                Genus           
-[1,] "Rhodocyclaceae"      "Propionivibrio"
-[2,] "Geobacteraceae"      "Geobacter"     
-[3,] "Geobacteraceae"      "Geobacter"     
-[4,] "Rhodocyclaceae"      "Propionivibrio"
-[5,] "Desulfovibrionaceae" "Desulfovibrio" 
-[6,] "Rhodocyclaceae"      "Propionivibrio" </code></pre>
+<pre><code>   Kingdom    Phylum           Class                 Order                   Family                
+[1,] "Bacteria" "Proteobacteria" "Gammaproteobacteria" "Betaproteobacteriales" "Rhodocyclaceae"      
+[2,] "Bacteria" "Proteobacteria" "Deltaproteobacteria" "Desulfuromonadales"    "Geobacteraceae"      
+[3,] "Bacteria" "Proteobacteria" "Deltaproteobacteria" "Desulfuromonadales"    "Geobacteraceae"      
+[4,] "Bacteria" "Proteobacteria" "Deltaproteobacteria" "Desulfovibrionales"    "Desulfovibrionaceae" 
+[5,] "Bacteria" "Proteobacteria" "Gammaproteobacteria" "Enterobacteriales"     "Enterobacteriaceae"  
+[6,] "Bacteria" "Proteobacteria" "Alphaproteobacteria" "Rhizobiales"           "Pleomorphomonadaceae"
+     Genus            
+[1,] "Propionivibrio" 
+[2,] "Geobacter"      
+[3,] "Geobacter"      
+[4,] "Desulfovibrio"  
+[5,] NA               
+[6,] "Pleomorphomonas" </code></pre>
 
 ### alpha diversity
-![](ims/alphadiversity.jpeg) 
+![](ims/alphadiversity_NoChim.jpeg) 
+<pre><code>Warning message:
+In estimate_richness(physeq, split = TRUE, measures = measures) :
+  The data you have provided does not have
+any singletons. This is highly suspicious. Results of richness
+estimates (for example) are probably unreliable, or wrong, if you have already
+trimmed low-abundance taxa from the data.
+
+We recommended that you find the un-trimmed data and retry.</code></pre> 
 ### familly plot 
 It seems that there is a wide viariability between the composition of each samples.
 These results suggest that each samples don't come from the same community, but maybe were taken at different moments or places. 
-![](ims/family.jpeg) 
+![](ims/family_NoChim.jpeg) 
