@@ -66,3 +66,64 @@ some stats from the log file:
 ```
 
 ### mapping
+very low overall alignment  
+Sample_01
+
+```
+113724 reads; of these:
+  113724 (100.00%) were paired; of these:
+    107182 (94.25%) aligned concordantly 0 times
+    6538 (5.75%) aligned concordantly exactly 1 time
+    4 (0.00%) aligned concordantly >1 times
+    ----
+    107182 pairs aligned concordantly 0 times; of these:
+      730 (0.68%) aligned discordantly 1 time
+    ----
+    106452 pairs aligned 0 times concordantly or discordantly; of these:
+      212904 mates make up the pairs; of these:
+        212602 (99.86%) aligned 0 times
+        294 (0.14%) aligned exactly 1 time
+        8 (0.00%) aligned >1 times
+6.53% overall alignment rate
+```
+
+Sample_02
+
+```
+50222 reads; of these:
+  50222 (100.00%) were paired; of these:
+    49361 (98.29%) aligned concordantly 0 times
+    861 (1.71%) aligned concordantly exactly 1 time
+    0 (0.00%) aligned concordantly >1 times
+    ----
+    49361 pairs aligned concordantly 0 times; of these:
+      211 (0.43%) aligned discordantly 1 time
+    ----
+    49150 pairs aligned 0 times concordantly or discordantly; of these:
+      98300 mates make up the pairs; of these:
+        98232 (99.93%) aligned 0 times
+        68 (0.07%) aligned exactly 1 time
+        0 (0.00%) aligned >1 times
+2.20% overall alignment rate
+```
+
+Sample_03 
+ 
+```
+173024 reads; of these:
+  173024 (100.00%) were paired; of these:
+    167900 (97.04%) aligned concordantly 0 times
+    5115 (2.96%) aligned concordantly exactly 1 time
+    9 (0.01%) aligned concordantly >1 times
+    ----
+    167900 pairs aligned concordantly 0 times; of these:
+      437 (0.26%) aligned discordantly 1 time
+    ----
+    167463 pairs aligned 0 times concordantly or discordantly; of these:
+      334926 mates make up the pairs; of these:
+        334746 (99.95%) aligned 0 times
+        177 (0.05%) aligned exactly 1 time
+        3 (0.00%) aligned >1 times
+3.27% overall alignment rate
+```
+## Anvi'o User Tutorial for Metagenomic Workflow
