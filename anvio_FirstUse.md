@@ -229,7 +229,7 @@ It is a program that enables anvi’o to run multiple binning algorithms on your
 ![](ims/SAMPLES_MERGED_view.jpeg)
 
 ### anvi-summarize
-collection summary: [Index](index.html)
+collection summary: [Index](SAMPLES-SUMMARY/index.html)
 
 
 
