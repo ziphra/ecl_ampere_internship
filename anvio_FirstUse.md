@@ -1,9 +1,9 @@
-# anvi'o first use 
-## after sequencing 
-### demultiplexing
+# Anvi'o first use 
+## After sequencing 
+### Demultiplexing
 I assumed the sequences were demultiplexed 
 
-### quality filtering 
+### Quality filtering 
 Sample_01
 
 ```
@@ -41,12 +41,20 @@ total pairs failed            : 11762 (%6.37 of all pairs)
   pairs failed due to pair_1  : 2234 (%18.99 of all failed pairs)
   pairs failed due to pair_2  : 8059 (%68.52 of all failed pairs)
   pairs failed due to both    : 1469 (%12.49 of all failed pairs)
-```
+  
+```    
+files 01_QC: 
+
+- **Sample_01-QUALITY\_PASSED\_R1.fastq**
+- Sample_01-STATS.txt
+- Sample_01.ini
+
+
 ### co-assembly with MEGAHIT
-The syntax for environment variables is  ``` R1s= `ls 01_QC/*QUALITY_PASSED_R1* | python -c 'import sys; print (",".join([x.strip() for x in sys.stdin.readlines()]))'` ```: missing parentheses in the tutorial)
+The syntax for environment variables is  ``` R1s= `ls 01_QC/*QUALITY_PASSED_R1* | python -c 'import sys; print (",".join([x.strip() for x in sys.stdin.readlines()]))'` ``` (missing parentheses in the tutorial)
 
 **to run:** `megahit -1 $R1s -2 $R2s --min-contig-len $MIN_CONTIG_SIZE -m 0.85 -o 02_ASSEMBLY/ -t $NUM_THREADS`
-with MIN\_CONTIG\_SIZE = 1000 and NUM\_THREADS = 40   
+with MIN\_CONTIG\_SIZE = 1000 and NUM\_THREADS = 4   
 (how to choose -m ?)
 
 some stats from the log file:
@@ -64,9 +72,17 @@ some stats from the log file:
 2020-04-28 03:09:22 - ALL DONE. Time elapsed: 793.728498 seconds 
 
 ```
+files 02_CONTIGS: 
 
-### mapping
-very low overall alignment  
+- checkpoints.txt
+- done
+- **final.contigs.fa**
+- intermediate_contigs (folder)
+- log
+- options.json
+- contigs.fa in 03_CONTIGS
+
+### mapping  
 Sample_01
 
 ```
@@ -126,4 +142,95 @@ Sample_03
         3 (0.00%) aligned >1 times
 3.27% overall alignment rate
 ```
+files 04_MAPPING:
+
+* Sample_01.bam.bai
+* Sample_01.bam
+* contigs.1.bt2
+* contigs.rev.1.bt2
+
+
+
 ## Anvi'o User Tutorial for Metagenomic Workflow
+### Create an anvi’o contigs database
+>An anvi’o contigs database will keep all the information related to your contigs: positions of open reading frames, k-mer frequencies for each contigs, where splits start and end, functional and taxonomic annotation of genes, etc.    
+
+#### anvi-gen-contigs-database
+We create a contigs data base *contigs.db* with k-mers frequencies, and ORF (the program use the software **Prodigal**). This will also soft-split contigs longer than 20000pb (why?).   
+files: 
+
+- contigs.db
+- mycontigs
+
+#### anvi-run-hmms
+This programm using **HMMER** will look for patterns from known sequences into our contigs using probabilistic models called profile hidden Markov models. Add hits to *contigs.db*
+
+#### anvi-display-contigs-stats
+a quick look at some of our contigs stats.    
+It seems that the contigs default size is 2500 nt. 
+![](ims/contigs_stats.jpeg) 
+
+#### anvi-run-ncbi-cogs
+annotate genes in your *contigs.db* with functions from the NCBI’s Clusters of Orthologus Groups.
+`2086 function calls from 2 sources for 1043 unique gene calls has been added to the contigs database.`
+
+#### anvi-import-taxonomy
+with **centrifuge**   
+"However, gene-level taxonomy is not reliable for making sense of the taxonomy of the resulting metagenome-assembled genomes."
+
+```
+Num gene caller ids in the db ................: 1,230
+Num gene caller ids in the incoming data .....: 1,048
+Taxon names table ............................: Updated with 36 unique taxon names
+Genes taxonomy table .........................: Taxonomy stored for 1048 gene calls
+Splits taxonomy ..............................: Input data from "centrifuge" annotated 283 of 299 splits (94.6%) with taxonomy. 
+```
+files: 
+
+- centrifuge_hits.tsv
+- centrifuge_report.tsv
+- gene_calls.fa 
+
+### Profiling BAM files
+#### anvi-profile
+In contrast to the contigs database, an anvi’o profile database stores sample-specific information about contigs.
+  
+- contigs coverage stats for each contigs
+- nt coverage. By default, the profiler will not pay attention to any nucleotide position with less than 10X coverage
+
+files:
+
+* SAMPLE\_01.bam-ANVIO_PROFILE
+  * AUXILIARY-DATA.db
+  * PROFILE.db
+  * RUNLOG.txt
+
+### Working with anvi'o profile
+#### anvi-merge
+Merge all anvi’o profiles
+
+files in SAMPLE-MERGED: 
+
+- AUXILIARY-DATA.db
+- PROFILE.db
+- RUNLOG.txt
+
+#### anvi-cluster-contigs 
+[Visualizing the fate of contigs across metagenomic binning algorithms](http://merenlab.org/2020/01/02/visualizing-metagenomic-bins/) a post by A. Murat Eren (Meren) and Jarrod J. Scott
+
+It is a program that enables anvi’o to run multiple binning algorithms on your data and seamlessly import the results into your profile database to compare. 
+
+maxbin2: FragGeneScan can not be used on mac os system
+metabat2: failed to run 
+concot: failed to install 
+binsanity: formed 1 clusters, which is being added to the database as a collection named collection.
+
+### anvi-interactive
+![](ims/SAMPLES_MERGED_view.jpeg)
+
+### anvi-summarize
+collection summary: [Index](index.html)
+
+
+
+
