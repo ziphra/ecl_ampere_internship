@@ -153,7 +153,7 @@ files created in 04_MAPPING:
 
 ## Anvi'o User Tutorial for Metagenomic Workflow
 ### Create an anvi’o contigs database
->An anvi’o contigs database will keep all the information related to your contigs: positions of open reading frames, k-mer frequencies for each contigs, where splits start and end, functional and taxonomic annotation of genes, etc.    
+"An anvi’o contigs database will keep all the information related to your contigs: positions of open reading frames, k-mer frequencies for each contigs, where splits start and end, functional and taxonomic annotation of genes, etc."     
 
 #### anvi-gen-contigs-database
 We create a contigs data base *contigs.db* with k-mers frequencies, and ORF (the program use the software **Prodigal**). This will also soft-split contigs longer than 20000pb (why?).   
@@ -175,7 +175,9 @@ annotate genes in your *contigs.db* with functions from the NCBI’s Clusters of
 `2086 function calls from 2 sources for 1043 unique gene calls has been added to the contigs database.`
 
 #### anvi-import-taxonomy
-with **centrifuge**   
+with **centrifuge**. See <http://merenlab.org/2016/06/18/installing-third-party-software/#centrifuge> for install.   
+Centrifuge dabases are in $CENTRIFUGE_BASE = zee/bioprogramms.   
+It is a “classification engine that enables rapid, accurate and sensitive labeling of reads and quantification of species on desktop computers”.    
 "However, gene-level taxonomy is not reliable for making sense of the taxonomy of the resulting metagenome-assembled genomes."
 
 ```
@@ -229,7 +231,7 @@ It is a program that enables anvi’o to run multiple binning algorithms on your
 ![](ims/SAMPLES_MERGED_view.jpeg)
 
 ### anvi-summarize
-collection summary: [Index](SAMPLES-SUMMARY/index.html)
+collection summary: [Index](https://htmlpreview.github.io/?https://github.com/ziphra/ecl_ampere_internship/blob/master/SAMPLES-SUMMARY/index.html)
 
 
 
