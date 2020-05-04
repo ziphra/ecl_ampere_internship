@@ -20,6 +20,7 @@ see [merenlab tutorial](http://merenlab.org/tutorials/assembly-based-metagenomic
 - **quality filtering**
 - **assambly** 
 - **mapping:** refers to the process of aligning short reads to a reference sequence, whether the reference is a complete genome, transcriptome, or de novo assembly. Generate BAM files. 
+- **binning:** grouping reads or contigs and assigning them to taxiconomic units. 
 
 
 # pipelines

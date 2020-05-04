@@ -1,0 +1,4 @@
+layers	total_reads_kept	num_SNVs_reported	total_reads_mapped
+SAMPLE_01	14846	186	14846
+SAMPLE_02	2212	4	2212
+SAMPLE_03	11302	129	11302

@@ -69,11 +69,14 @@ The monitoring of electrical current in BES used in remediation, offers a contin
 ##### My notes:
 - **BES designs:**  
 Two-chamber BESs tend to be favored for remediation research where the degradation of specific waste is usually examined individually in anodic or cathodic chambers for oxidative or reductive reactions, respectively.     
-In anodic biodegradation studies, a typical design is a two-chamber BES.  
+In anodic biodegradation studies, a typical design is a two-chamber BES. se expensive and unstainable cathode materials to catalize the oxydation occuring at the cathode.
 - **Microbiology and mediators**
-The electrons can transfer to the anode via redox components located on the outer surface of the microorganism (e.g., cytochromes, pilus-like appendages) (like Geobacter spp) and  mediated electron transfer based on diffusible redox mediators, electroactive substrats, or humic substances).  
+Bacterias can use the electrons from he cathode for dissimilatory reduction and some have been identified.   
+The electrons can transfer to the anode via redox components located on the outer surface of the microorganism (e.g., cytochromes, pilus-like appendages) (like *Geobacter spp*) and  mediated electron transfer based on diffusible redox mediators, electroactive substrats, or humic substances).  
 Little is known about the biochemical mechanisms of microbial electron uptake from a cathode.  
-- **Potential and power design**  
+antraquinone-2,6-disulfonate (AQDS) and methyl viologen (MV) are electrons mediators often encountered in bioremediation studies.   
+Some electroactive substances such as quinones, phenazines, humic substance, can be used by either electron donors and electron acceptors. Addition of mediators to the substrates may not be a good idea. It raises the cost, and recquire additional treatment to remove this coumpounds from the treated environment. 
+- **Potential and power supply**  
 An optimal applied potential can provide an appropriate selective pressure for adaptation of microorganisms, promote enrichment of the biofilm, reduce the startup time of the system, and increase the subsequent power density due to better acclimation of the exoelectrogenic bacteria.
 
 # Glossary

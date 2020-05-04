@@ -72,7 +72,7 @@ some stats from the log file:
 2020-04-28 03:09:22 - ALL DONE. Time elapsed: 793.728498 seconds 
 
 ```
-files 02_CONTIGS: 
+files created in 02_CONTIGS: 
 
 - checkpoints.txt
 - done
@@ -142,7 +142,7 @@ Sample_03
         3 (0.00%) aligned >1 times
 3.27% overall alignment rate
 ```
-files 04_MAPPING:
+files created in 04_MAPPING:
 
 * Sample_01.bam.bai
 * Sample_01.bam
@@ -185,7 +185,7 @@ Taxon names table ............................: Updated with 36 unique taxon nam
 Genes taxonomy table .........................: Taxonomy stored for 1048 gene calls
 Splits taxonomy ..............................: Input data from "centrifuge" annotated 283 of 299 splits (94.6%) with taxonomy. 
 ```
-files: 
+files created: 
 
 - centrifuge_hits.tsv
 - centrifuge_report.tsv
@@ -198,7 +198,7 @@ In contrast to the contigs database, an anvi’o profile database stores sample-
 - contigs coverage stats for each contigs
 - nt coverage. By default, the profiler will not pay attention to any nucleotide position with less than 10X coverage
 
-files:
+files created :
 
 * SAMPLE\_01.bam-ANVIO_PROFILE
   * AUXILIARY-DATA.db
@@ -209,7 +209,7 @@ files:
 #### anvi-merge
 Merge all anvi’o profiles
 
-files in SAMPLE-MERGED: 
+files created in SAMPLE-MERGED: 
 
 - AUXILIARY-DATA.db
 - PROFILE.db
@@ -220,10 +220,10 @@ files in SAMPLE-MERGED:
 
 It is a program that enables anvi’o to run multiple binning algorithms on your data and seamlessly import the results into your profile database to compare. 
 
-maxbin2: FragGeneScan can not be used on mac os system
-metabat2: failed to run 
-concot: failed to install 
-binsanity: formed 1 clusters, which is being added to the database as a collection named collection.
+- maxbin2: FragGeneScan can not be used on mac os system
+- metabat2: failed to run 
+- concot: failed to install 
+- binsanity: formed 1 clusters, which is being added to the database as a collection named collection.
 
 ### anvi-interactive
 ![](ims/SAMPLES_MERGED_view.jpeg)
