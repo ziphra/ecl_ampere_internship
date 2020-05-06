@@ -156,8 +156,8 @@ files created in 04_MAPPING:
 "An anvi’o contigs database will keep all the information related to your contigs: positions of open reading frames, k-mer frequencies for each contigs, where splits start and end, functional and taxonomic annotation of genes, etc."     
 
 #### anvi-gen-contigs-database
-We create a contigs data base *contigs.db* with k-mers frequencies, and ORF (the program use the software **Prodigal**). This will also soft-split contigs longer than 20000pb (why?).   
-files: 
+We create a contigs data base *contigs.db* with k-mers frequencies, and ORF (the program use the software **Prodigal**). This will also soft-split contigs longer than 20000pb (Anvi'o splits very long contigs into smaller pieces,without actually splitting them for real. These 'virtual' splits improve the efficacy of the visualization step, and changing the split size gives freedom to the user to adjust the resolution of their display when necessary. The default value is (20000). If you are planning to use your contigs database for metagenomic binning, we advise you to not go below 10,000 (since the lower the split size is, the more items to show in the display, and decreasing the split size does not really help much to binning).).      
+files created: 
 
 - contigs.db
 - mycontigs
@@ -166,8 +166,8 @@ files:
 This programm using **HMMER** will look for patterns from known sequences into our contigs using probabilistic models called profile hidden Markov models. Add hits to *contigs.db*
 
 #### anvi-display-contigs-stats
-a quick look at some of our contigs stats.    
-It seems that the contigs default size is 2500 nt. 
+a quick look at some of our contigs stats.
+We kept contigs when > 2500nt.        
 ![](ims/contigs_stats.jpeg) 
 
 #### anvi-run-ncbi-cogs
@@ -189,18 +189,27 @@ Splits taxonomy ..............................: Input data from "centrifuge" ann
 ```
 files created: 
 
+- gene_calls.fa (we exported the gene calls of our contigs.db)
 - centrifuge_hits.tsv
 - centrifuge_report.tsv
-- gene_calls.fa 
+ 
+    ```
+    $ wc -l centrifuge_report.tsv centrifuge_hits.tsv
+    
+    133 centrifuge_report.tsv
+    1287 centrifuge_hits.tsv
+    1420 total
+    ```
 
 ### Profiling BAM files
+already sorted and indexed
 #### anvi-profile
 In contrast to the contigs database, an anvi’o profile database stores sample-specific information about contigs.
   
 - contigs coverage stats for each contigs
 - nt coverage. By default, the profiler will not pay attention to any nucleotide position with less than 10X coverage
 
-files created :
+files created:
 
 * SAMPLE\_01.bam-ANVIO_PROFILE
   * AUXILIARY-DATA.db
@@ -227,8 +236,14 @@ It is a program that enables anvi’o to run multiple binning algorithms on your
 - concot: failed to install 
 - binsanity: formed 1 clusters, which is being added to the database as a collection named collection.
 
+Binsanity and concoct tends to create fake contigs based on similarity. 
+Account for nucleotids coverage allows to get rid of a lot of noise (as concot through anvi'o). 
+
 ### anvi-interactive
 ![](ims/SAMPLES_MERGED_view.jpeg)
+We can highlight and define bins manually, and look up to the completion and redundancy. We can refine bins manually with the GC content value that tends to changed between two different organisms. 
+
+anvi-refine -c contigs.db -p SAMPLES-MERGED/PROFILE.db  -C default -b Bin_2
 
 ### anvi-summarize
 collection summary: [Index](https://htmlpreview.github.io/?https://github.com/ziphra/ecl_ampere_internship/blob/master/SAMPLES-SUMMARY/index.html)
