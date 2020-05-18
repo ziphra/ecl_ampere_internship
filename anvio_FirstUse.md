@@ -1,3 +1,5 @@
+`conda activate anvio-master`
+`anvi-activate-master`
 # Anvi'o first use 
 ## After sequencing 
 ### Demultiplexing
@@ -152,6 +154,7 @@ files created in 04_MAPPING:
 
 
 ## Anvi'o User Tutorial for Metagenomic Workflow
+[tuto] (http://merenlab.org/2016/06/22/anvio-tutorial-v2/)
 ### Create an anvi’o contigs database
 "An anvi’o contigs database will keep all the information related to your contigs: positions of open reading frames, k-mer frequencies for each contigs, where splits start and end, functional and taxonomic annotation of genes, etc."     
 

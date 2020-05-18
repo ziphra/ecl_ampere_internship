@@ -12,13 +12,13 @@ of members and understanding of how communities function. High-throughput sequen
 - **Metagenomic assembly**: Because sequencer can only read short sequences, it is necessary to assemble the reads in order to reconstruct the original sequence. Overlapping reads are merged in contigs. Bruijn graph consit in overlapping k-mers to reconstruct genomes. Sequence coverage is often not uniforme, and depends on the abundance of this sequence into the sample. Assembly is complicated by sequencing errors and repeptitives sequences.     
 Assembly can be done with *Megahit* or *SPAdes*.
 - ...
-
+![](ims/metagenomicworkflow.jpeg)
 # data treatment after sequencing 
 see [merenlab tutorial](http://merenlab.org/tutorials/assembly-based-metagenomics/)
 
 - **demultiplexing:**  sorting the sequences into separated reads following their barcode. 
 - **quality filtering**
-- **assambly** 
+- **assembly** 
 - **mapping:** refers to the process of aligning short reads to a reference sequence, whether the reference is a complete genome, transcriptome, or de novo assembly. Generate BAM files. 
 - **binning:** grouping reads or contigs and assigning them to taxiconomic units. 
 

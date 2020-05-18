@@ -79,6 +79,14 @@ Some electroactive substances such as quinones, phenazines, humic substance, can
 - **Potential and power supply**  
 An optimal applied potential can provide an appropriate selective pressure for adaptation of microorganisms, promote enrichment of the biofilm, reduce the startup time of the system, and increase the subsequent power density due to better acclimation of the exoelectrogenic bacteria.
 
+
+
+Shityakov, S., Bencurova, E., Förster, C., Dandekar, T., 2020. Modeling of shotgun sequencing of DNA plasmids using experimental and theoretical approaches. BMC Bioinformatics 21, 132. https://doi.org/10.1186/s12859-020-3461-6
+
+
+Krawczyk, P.S., Lipinski, L., Dziembowski, A., 2018. PlasFlow: predicting plasmid sequences in metagenomic data using genome signatures. Nucleic Acids Research 46, e35–e35. https://doi.org/10.1093/nar/gkx1321
+
+
 # Glossary
 - **Bioelectrical system (BES)**: In these systems, a potential difference between two electrodes is created because of the redox potentials of an oxidation reaction at the anode and a reduction reaction at the cathode.
   Devices that employ microbes as catalysts to convert chemical energy stored in organic matter into sustainable electricity and high-value chemicals.  
