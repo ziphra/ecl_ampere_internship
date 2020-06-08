@@ -1,2 +1,0 @@
-bins	taxon	total_length	num_contigs	N50	GC_content	percent_completion	percent_redundancy
-contigs_Bin_0	Pseudoxanthomonas	1125307	299	3671	66.64477132687708	43.66197183098591	0.0

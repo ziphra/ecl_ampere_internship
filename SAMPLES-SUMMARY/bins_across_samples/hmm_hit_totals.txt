@@ -1,2 +1,0 @@
-bins	Ribosomal_RNAs
-contigs_Bin_0	3

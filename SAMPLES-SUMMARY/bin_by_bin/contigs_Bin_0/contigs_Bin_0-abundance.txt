@@ -1,2 +1,0 @@
-bin	SAMPLE_01	SAMPLE_02	SAMPLE_03
-abundance	1.0	1.0	1.0
