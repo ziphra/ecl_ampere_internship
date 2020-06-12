@@ -671,7 +671,21 @@ Splits taxonomy ..............................: Input data from "centrifuge" ann
 ### Profiling BAM files
 To do the profiling for all bam files:
 `for bam in 04_MAPPING/*.bam; do anvi-profile -i $bam -c contigs.db -T 4; done`
+
 ________
+
+### Profiling BAM files 2 
+Remove contigs shorter than 2000 from the profile.db 
+`for bam in 04_MAPPING/*.bam; do anvi-profile -i $bam -c contigs.db -T 4; done --min-contig-length 2000`
+
+## bins and refinment 
+A good bin is a bin with ~90% complexion and ~10% redunduncy. Look up GC content, taxonomy estimation, and coverage. 
+[notes on refinement](http://merenlab.org/2017/05/11/anvi-refine-by-veronika/)
+
+see mybins-SUMMARY folder. 
+
+
+
 
 # Contigs exploration
 ## How many bacterial genomes in my assembly
@@ -683,6 +697,7 @@ ________
 
 ## Estimate taxonomy 
 [Tuto](http://merenlab.org/2019/10/08/anvio-scg-taxonomy/)
+copy paste tab file to excel and export to cvs to make R plot 
 Taxonomy coverage
 ![](ims/species_cov.jpg)
 ![](ims/genus_cov.jpg)
