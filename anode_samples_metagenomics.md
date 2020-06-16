@@ -616,6 +616,7 @@ BAM File Index ...............................: /Users/euphrasieservant/Document
 ## Metagenomic workflow
 [Tutorial](http://merenlab.org/2016/06/22/anvio-tutorial-v2/#take-a-look-at-your-fasta-file)
 ### Creating a contigs database
+`--min-contig-length` set at 1000.
 
 ```
 Result .......................................: Prodigal (v2.6.3) has identified 67884 genes.                                      
@@ -656,6 +657,12 @@ stuff we often force biologists to deal with. If you want to do some Googling,
 these were the offending protein IDs: '428776342'.
 ```
 #### Taxonomy annotations
+with **centrifuge**.  
+
+Centrifuge dabases are in $CENTRIFUGE_BASE = zee/bioprogramms.   
+It is a “classification engine that enables rapid, accurate and sensitive labeling of reads and quantification of species on desktop computers”.    
+"However, gene-level taxonomy is not reliable for making sense of the taxonomy of the resulting metagenome-assembled genomes."
+
 ```
 Total num hits found .........................: 79,966
 Removed due to low hit score of 250 ..........: 45,750
@@ -682,14 +689,19 @@ Remove contigs shorter than 2000 from the profile.db
 A good bin is a bin with ~90% complexion and ~10% redunduncy. Look up GC content, taxonomy estimation, and coverage. 
 [notes on refinement](http://merenlab.org/2017/05/11/anvi-refine-by-veronika/)
 
-see mybins-SUMMARY folder. 
+see mybins.pdf 
+ 
+## blastx
+
+`for bins in mybins/*.fa; do blastx -query $bins  -db bssa/BSSA_db.fasta -outfmt 6 -out $bins.results; done`
 
 
 
+________
 
 # Contigs exploration
 ## How many bacterial genomes in my assembly
-[Tuto](http://merenlab.org/2015/12/07/predicting-number-of-genomes/)   
+[(http://merenlab.org/2015/12/07/predicting-number-of-genomes/)]   
 
 ![](ims/contigs_bact_hits.jpg)
 ![](ims/contigs_archae_hits.jpg)
@@ -701,13 +713,6 @@ copy paste tab file to excel and export to cvs to make R plot
 Taxonomy coverage
 ![](ims/species_cov.jpg)
 ![](ims/genus_cov.jpg)
-
-
-
-
-
-
-
 
 
 ________
