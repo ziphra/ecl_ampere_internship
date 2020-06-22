@@ -47,7 +47,6 @@ Scores for complete sequences (score includes all domains):
 
 
 ## BSSA 
-- Newly imported sequence are almost all clustered together.
 
 ## Phenylethanol Dehydrogenase
 - first blast result with only 52.5 % identity 
@@ -59,6 +58,8 @@ Scores for complete sequences (score includes all domains):
 - hmm profile seemed to have beffed up the db 
 
 ## p-Cresol Methylhydroxylase
+
+
 
 
 
