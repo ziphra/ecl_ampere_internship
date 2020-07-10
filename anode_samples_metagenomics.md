@@ -692,9 +692,10 @@ A good bin is a bin with ~90% complexion and ~10% redunduncy. Look up GC content
 see mybins.pdf 
  
 ## blastx
-
 `for bins in mybins/*.fa; do blastx -query $bins  -db bssa/BSSA_db.fasta -outfmt 6 -out $bins.results; done`
 
+
+See blastx md file
 
 
 ________

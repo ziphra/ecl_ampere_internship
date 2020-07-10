@@ -5,7 +5,7 @@ After having figured out my bins.
 `makeblastdb -in /Users/euphrasieservant/Documents/internship_ecl/proteins_db2/BSSA/BSSA_db.fasta  -title "BSSA_blast_db" -dbtype prot`
 
 ## get gene calls
-I export gene calls from my contigs.db. Open reading frames were identify using Prodigal while creating the contigs.db in anvio.
+I export gene calls from my contigs.db. Open reading frames were identified using Prodigal while creating the contigs.db in anvio.
 
 `anvi-get-sequences-for-gene-calls -c /Users/euphrasieservant/Documents/internship_ecl/EMW/asmw2/contigs.db   -o mygenes --report-extended-deflines`
 
